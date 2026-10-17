@@ -1,0 +1,6 @@
+# Preserve upstream license bytes on every platform.
+/licenses/** -text
+# Vendored Netron modules are pinned by vendor/netron/SHA256SUMS; keep their bytes on every OS.
+/vendor/netron/** -text
+# Compiled by npm run compile and committed; CI fails if a recompile differs.
+/dist/** linguist-generated=true text eol=lf

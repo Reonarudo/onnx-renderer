@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/lutzroeder/netron",
+  "commit": "aa75482bcf0bcf75565c51126eba40de447c476f",
+  "version": "9.3.1",
+  "license": "MIT",
+  "sources": {
+    "source/onnx.js": "6b239ec52155c4819d7ac89f8c4c530e9dde3490566cecb3c278fb368b5aaaac",
+    "source/onnx-proto.js": "7e8993540ebc6d27129b3e0cd6a124573a473baac465ffeff82991bf2db7b3cb",
+    "source/protobuf.js": "d636cda5fde4c9d6338767d38127f607d3df95f6b6ee67e15cb0e7097112815f",
+    "source/text.js": "6cafc56a279199f73d01a86370f7fb9144ef5a456fa4aaca0b575ac9cb0cce6d",
+    "source/json.js": "a899be44f3f3d3914b694ccc1ea95774a358ab99db6a08a79df44e7b5365f49b",
+    "LICENSE": "535cb2c7c8990f967c106e3035e4df8d3e070144af1163b86c8bb58b65fe5e88",
+    "source/onnx-metadata.json": "91c8cfdd06bb13d0ed04d2fa0e56f7c198c4e05c4d85e1fa5308b84cc21cc258"
+  },
+  "onnx-metadata.json": "source/onnx-metadata.json with every field but name, module, version, category, inputs, outputs and attributes removed by scripts/vendor.mjs"
+}
