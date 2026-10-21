@@ -1,6 +1,6 @@
 {
   "name": "@reonarudo/onnx-renderer",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Draw ONNX models written as text as safe, inline-ready SVG graphs in Node",
   "keywords": [
     "onnx",
