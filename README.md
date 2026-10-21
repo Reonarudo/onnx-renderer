@@ -7,11 +7,11 @@ it started as a copy of [ONNX Graph Preview](https://github.com/Reonarudo/onnx-m
 and draws what that extension draws.
 
 ```sh
-npm install github:Reonarudo/onnx-renderer#v0.1.0
+npm install https://github.com/Reonarudo/onnx-renderer/releases/download/v1.0.0/reonarudo-onnx-renderer-1.0.0.tgz
 ```
 
-On npm 12 or later, a project installing git dependencies also needs `allow-git=root` in its
-`.npmrc`. Nothing runs on install: `dist/` and the Netron reader are committed.
+On npm 12 or later, the installing project also needs `allow-remote=root` in its `.npmrc`.
+Nothing runs on install: `dist/` and the Netron reader are committed.
 
 ## Use
 
@@ -160,11 +160,18 @@ npm ci
 npm run lint          # tsc --noEmit
 npm run compile       # tsc → dist/, which is committed; CI fails if it is stale
 npm test              # tests import dist/ and src/, so compile first
+UPDATE_GOLDEN=1 npm test  # re-record test/golden/ after a deliberate output change
 npm run test:packed   # npm pack, install into a temp project, render one fence
 npm run vendor        # re-fetch the Netron reader at its pinned commit
 ```
 
 Requires Node 22 or later (`.nvmrc` pins the version used in development).
+
+## Releasing
+
+Versions, golden SVG tests and the release procedure follow
+[Releasing](http://192.168.188.68:3001/projects/markdown-renderers/wiki/Releasing).
+What each version changed is in [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

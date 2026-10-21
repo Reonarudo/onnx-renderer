@@ -1,0 +1,3 @@
+g (float[1] x) => (float[1] y) {
+  y = Relu (x
+}

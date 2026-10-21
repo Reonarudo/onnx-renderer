@@ -1,0 +1,10 @@
+<ir_version: 8, opset_import: ["" : 17]>
+cnn (float[N, 3, 32, 32] x, float[8, 3, 3, 3] w = {}, float[8] b = {}) => (float[N, 10] y) {
+  c = Conv <kernel_shape = [3, 3], pads = [1, 1, 1, 1]> (x, w, b)
+  bn = BatchNormalization <epsilon = 0.00001> (c, scale, bias, mean, var)
+  r = Relu (bn)
+  p = MaxPool <kernel_shape = [2, 2], strides = [2, 2]> (r)
+  g = GlobalAveragePool (p)
+  f = Flatten (g)
+  y = Gemm <transB = 1> (f, fc_w, fc_b)
+}

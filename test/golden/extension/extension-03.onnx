@@ -1,0 +1,11 @@
+attention (float[B, T, 512] x, bool mask) => (float[B, T, 512] y) {
+  q = MatMul (x, wq)
+  k = MatMul (x, wk)
+  v = MatMul (x, wv)
+  kt = Transpose <perm = [0, 2, 1]> (k)
+  scores = MatMul (q, kt)
+  scaled = Div (scores, scale)
+  masked = If <then_branch = yes () => (float[B, T, T] t) { t = Where (mask, scaled, neg_inf) }, else_branch = no () => (float[B, T, T] e) { e = Identity (scaled) }> (mask)
+  p = Softmax <axis = -1> (masked)
+  y = MatMul (p, v)
+}
